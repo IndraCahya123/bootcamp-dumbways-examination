@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumbways Examination</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="title">
+        <h1>The Answer of Question 2</h1>
+        <br>
+        <pre>
+            this will make array with 2 dimension, and that array will containt
+            a number with adding by 6 inside it.
+        </pre>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="row" placeholder="Insert Row" style="margin-bottom: 15px;">
+        <input type="text" id="column" placeholder="Insert Column" style="margin-bottom: 15px;">
+        <button type="button" onclick="createArray" id="input">Create Array</button>
+    </div>
+
+    <div class="table">
+        <table border="1px" id="table">
+
+        </table>
+    </div>
+
+    <script type="text/javascript">
+    
+        const table = document.getElementById('table');
+        function createArray(){
+            let rows = document.getElementById('row').value;
+            let columns = document.getElementById('column').value;
+
+            let numberInsideCol = 0;
+
+            for(row = 0; row < rows; row++){
+                table.insertRow()
+                for(column = 0; column < columns; column++){
+                    numberInsideCol = numberInsideCol +6;
+                    let theColumn = table.insertRow();
+                    theColumn.innerHTML() = numberInsideCol;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
