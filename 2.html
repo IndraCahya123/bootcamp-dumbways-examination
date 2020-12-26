@@ -27,37 +27,37 @@
     <div class="input-area">
         <input type="text" id="row" placeholder="Insert Row" style="margin-bottom: 15px;">
         <input type="text" id="column" placeholder="Insert Column" style="margin-bottom: 15px;">
-        <button type="button" onclick="createArray" id="input">Create Array</button>
+        <button type="button" id="input">Create Array</button>
     </div>
 
-    <div class="table">
-        <table border="1px" id="table">
-
-        </table>
+    <div id="table">
     </div>
 
     <script type="text/javascript">
     
-        const table = '';
+        let tableConstruct = '';
 
-        function createArray(){
+        
+        let tableArea = document.getElementById('table');
+        let inputBtn = document.getElementById('input');
+        
+        inputBtn.addEventListener('click', function(){
 
-            let rows = document.getElementById('row').value;
-            let columns = document.getElementById('column').value;
-            alert(rows + 'and' + columns);
-            
-            let numberInsideCol = 0;
-
-            for(row = 0; row < rows; row++){
-                table.insertRow()
-                for(column = 0; column < columns; column++){
-                    numberInsideCol = numberInsideCol +6;
-                    let theColumn = table.insertRow();
-                    theColumn.innerHTML() = numberInsideCol;
+                let rows = document.getElementById('row').value;
+                let columns = document.getElementById('column').value;
+                let numberInsideCol = 2;
+    
+                for(row = 0; row < rows; row++){
+                    tableConstruct += '<tr>'; 
+                        for(column = 0; column <= columns; column++){
+                            tableConstruct += '<td>' + numberInsideCol + '</td>';
+                            numberInsideCol += 6;
+                        }
+                    tableConstruct += '</tr>'
                 }
-            }
-        }
-
+                let table = '<table border="1px">' + tableConstruct + '</table>';
+                tableArea.innerHTML = table;
+            });
     </script>
 </body>
 </html>
