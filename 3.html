@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumbways Examination</title>
+</head>
+<body>
+    <h1 style="text-align: center;">This is the answer of question number 3</h1>
+    <br>
+    
+    <button type="button" id="button">Click Me</button>
+    
+    <div id="star-area">
+
+    </div>
+
+    <script type="text/javascript">
+
+    let starArea = '&nbsp;';
+    let space = '$nbsp';
+
+    const theArea = document.getElementById('star-area');
+    const button = document.getElementById('button');
+
+    button.addEventListener('click', function()
+    {
+        const rows = 7;
+
+        for(row = rows; row > 0; row--){
+            starArea += '<p>' 
+                for(column = 0; column < row*2-1; column++){
+                    if (column == 0) {
+                        starArea += '*'
+                    } else {
+                        starArea += '*';                        
+                    }
+                }
+                starArea += '</p>';
+        }
+
+        theArea.innerHTML = starArea;
+    })
+
+    </script>
+</body>
+</html>
